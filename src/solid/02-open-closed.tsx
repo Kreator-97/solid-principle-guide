@@ -1,21 +1,25 @@
 
 import { FC } from "react";
 
+type NotificationType = "success" | "error" | "warning" | "info" | 'default' | 'custom' | 'brand';
+
 interface Props {
-  type: "success" | "error" | "warning";
-  message: string;
+  type: NotificationType
+  message: string
+}
+
+const notificationStyles: Record<NotificationType, { color: string }> = {
+  success: { color: "green" },
+  error: { color: "red" },
+  warning: { color: "orange" },
+  info: { color: "blue" },
+  custom: { color: "purple" },
+  brand: { color: "pink" },
+  default: { color: "black" },
 }
 
 export const Notification: FC<Props> = ({ type, message }) => {
-  let style = {};
-
-  if (type === "success") {
-    style = { color: "green" };
-  } else if (type === "error") {
-    style = { color: "red" };
-  } else if (type === "warning") {
-    style = { color: "orange" };
-  }
+  const style = notificationStyles[type] || notificationStyles.default;
 
   return <div style={style}>{message}</div>;
 };
