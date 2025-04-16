@@ -18,18 +18,30 @@ export class Sale {
   get totalWithShipping(): number {
     return this.totalWithTax + 35
   }
+}
 
-  generateReports() {
-    console.log('Generating reports')
+export class SaleReport {
+  constructor(private sale: Sale) {}
+
+  generate() {
+    console.log('Generating report')
     // Aquí se generaría el reporte
   }
+}
 
-  sendEmail() {
+export class SaleEmailNotification {
+  constructor(private sale: Sale) {}
+
+  send() {
     console.log('Sending email')
     // Aquí se enviaría el email
   }
+}
 
-  generateBill() {
+export class BillingService {
+  constructor(private sale: Sale) {}
+
+  generate() {
     console.log('Generating bill')
     // Aquí se generaría la factura
   }
