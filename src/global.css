@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-700 text-slate-200
+  }
+
+  button {
+    @apply cursor-pointer hover:opacity-80 transition-opacity
+  }
+}
