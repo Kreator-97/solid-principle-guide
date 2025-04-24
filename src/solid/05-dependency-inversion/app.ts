@@ -1,5 +1,5 @@
 import { Creatable, HttpClient, Readable } from "./interfaces"
-import { AxiosClient } from "./classes/axios-http"
+import { FetchHttpClient } from "./classes/fetch-http"
 
 interface PostServiceInterface extends Readable, Creatable {}
 
@@ -20,7 +20,7 @@ export class PostService implements PostServiceInterface {
   }
 }
 
-const postService = new PostService(new AxiosClient())
+const postService = new PostService(new FetchHttpClient())
 
 postService.find()
   .then((data) => {

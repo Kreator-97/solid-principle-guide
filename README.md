@@ -37,14 +37,14 @@ Si una clase Hija hereda de una clase Padre, deberías poder usar la hija en cua
 ### Ventajas
 Evita comportamiento inesperados en el sistema.
 
-## Principio de la segregación de la interfaz
-    Los clientes no deberían ser forzados a depender de interfaces que no usan.
+## Principio de la segregación (división) de interfaces
+    Los clientes (módulo) no deberían ser forzados a depender de interfaces que no usan.
 
 Para cumplir con este principio, debemos de crear interfaces más pequeñas en lugar de una interfaz enorme. Cuando una interfaz tiene demasiadas responsabilidades, fuerza a las clases a implementar cosas que no necesitan.
 
 Es mejor tener interfaces especificas que interfaces enormes.
 
-## Principio de inversión de dependencias.
+## Principio de inversión (intercambio) de dependencias.
     Los modulos de alto nivel no deben depender de los módulos de bajo nivel. Ambos deben depender de abstracciones.
 
 En otras palabras, los modulos deben de depender de abstracciones y no de implementaciones concretas.

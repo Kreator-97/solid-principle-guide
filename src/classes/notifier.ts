@@ -19,3 +19,10 @@ export class Notifier implements SMSNotifier, EmailNotifier, PushNotifier {
     return true
   }
 }
+
+export class Mailer implements EmailNotifier {
+  async sendEmail(email: string, message: string): Promise<boolean> {
+    console.log(`Sending email to ${email}: ${message}`);
+    return true
+  }
+}
