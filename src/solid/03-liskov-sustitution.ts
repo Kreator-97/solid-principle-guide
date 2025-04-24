@@ -4,22 +4,21 @@ class User {
   constructor(name: string) {
     this.name = name;
   }
-
-  deleteUser(userId: string): void {
-    console.log(`${this.name} ha eliminado al usuario ${userId}`);
-  }
 }
 
-class GuestUser extends User {
+class AdminUser extends User {
   deleteUser(userId: string): void {
     console.log({ userId })
-    throw new Error("Los invitados no pueden eliminar usuarios");
+    // Aquí se eliminaría el usuario
   }
 }
 
-const users: User[] = [
-  new User("Admin"),
-  new GuestUser("Invitado"),
+class GuestUser extends User {}
+const guestUser = new GuestUser("Invitado");
+console.log({ guestUser })
+
+const users: AdminUser[] = [
+  new AdminUser("Admin"),
 ];
 
 users.forEach(user => user.deleteUser("123")); // ❌ BOOM con GuestUser

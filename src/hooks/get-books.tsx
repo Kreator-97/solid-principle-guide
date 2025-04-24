@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Book as BookType } from "../interfaces/book"
-import { Book } from "../services/book"
-const book = new Book()
+import { BookService } from "../services/book"
+const book = new BookService()
 
 export const useBooks = () => {
   const [books, setBooks] = useState<BookType[]>([])

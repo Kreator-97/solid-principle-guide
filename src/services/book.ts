@@ -1,6 +1,6 @@
 import { BookResponse } from "../interfaces/api/book-response"
 
-export class Book {
+export class BookService {
   url = 'https://www.dbooks.org/api/recent'
 
   async getAll() {

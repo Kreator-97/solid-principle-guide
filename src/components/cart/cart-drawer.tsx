@@ -5,7 +5,7 @@ import { Sidebar } from "../ui/sidebar"
 import { UIContext } from "../../context/ui"
 import { CartContext } from "../../context/cart"
 import { CartItems } from "./cart-items"
-import { calculateShipping } from "../../utils/shipping-cost"
+import { Shipping } from "../../classes/shipping"
 
 export const CartDrawer = () => {
   const { cart } = useContext(CartContext)
@@ -59,7 +59,7 @@ export const CartDrawer = () => {
           <h4 className="mr-1">Shipping: </h4>
           <p>
             {/* TODO: Add shipping cost */}
-            ${calculateShipping(cart.totalPrice)}
+            ${new Shipping().calculateShipping(cart.totalPrice)}
           </p>
         </div>
       </footer>
